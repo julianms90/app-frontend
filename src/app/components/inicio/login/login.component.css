@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h3{
+    font-family: 'Merriweather', cursive;
+}
+
+.btn-login{
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+.form-button {
+    height: 50px;
+    border-radius: 10px
+}

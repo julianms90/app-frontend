@@ -1,0 +1,336 @@
+h3 {
+    color: #ffff;
+    font-size: 36px;
+    font-weight: 400;
+    z-index: 1000;
+    pointer-events: none;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 25px;
+}
+
+.linea-horizontal-min {
+    height: 3px;
+    background: linear-gradient(161deg, #d51e16 0, #d93716 4.76%, #e47718 14.86%, #f0bc19 24.96%, #e9be30 27.56%, #d2c582 37.33%, #c1cabf 45.34%, #b7cee4 51.2%, #b3cff2 54.29%, #acc8ec 57.52%, #9ab6da 62.08%, #7c98bd 67.44%, #536d94 73.4%, #1e3861 79.79%, #163059 80.67%);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+hr {
+    border-width: 3px;
+    max-width: 65px;
+    border-color: cornflowerblue;
+}
+
+/*
+.btn-xl {
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    margin: 10px;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+}
+
+.btn-xl:hover {
+    background-color: dodgerblue;
+    border-radius: dodgerblue;
+    border-width: 5px;
+}
+*/
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/*! CSS Used from: https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .btn {
+        transition: none;
+    }
+}
+
+.btn:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+.btn:disabled {
+    opacity: .65;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(38, 143, 255, .5);
+}
+
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+
+.mt-2 {
+    margin-top: .5rem !important;
+}
+
+.px-3 {
+    padding-right: 1rem !important;
+}
+
+.px-3 {
+    padding-left: 1rem !important;
+}
+
+.px-4 {
+    padding-right: 1.5rem !important;
+}
+
+.px-4 {
+    padding-left: 1.5rem !important;
+}
+
+@media (min-width:992px) {
+    .mt-lg-4 {
+        margin-top: 1.5rem !important;
+    }
+}
+
+@media print {
+    *, ::after, ::before {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/*! CSS Used from: https://www.bitsion.com/bitsion/styles.a3d36d21f21bcb364c0d.css */
+* {
+    -webkit-transition: .3s cubic-bezier(.25, .8, .25, 1);
+    transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    position: relative;
+}
+
+a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: .4s linear;
+    transition: all .4s linear;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.btn {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn.btn-lg {
+    min-width: 100px;
+}
+
+[class*=btn-] {
+    vertical-align: middle;
+}
+
+.btn-rounded {
+    border-radius: 24px;
+}
+
+.btn-fill {
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.btn-fill.second {
+    display: inline-block;
+    border: 2px solid #d81f16;
+    background-color: #d81f16;
+}
+
+.btn-fill.second:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #d81f16;
+    border-color: #d81f16;
+}
+
+.btn:hover {
+    color: #000;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s all ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*! CSS Used from: https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-8, .col-lg-4, .col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+@media (min-width:768px) {
+    .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width:992px) {
+    .col-lg-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+.justify-content-center {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.my-4 {
+    margin-top: 1.5rem !important;
+}
+
+.my-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+@media print {
+    *, ::after, ::before {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/*! CSS Used from: https://www.bitsion.com/bitsion/styles.a3d36d21f21bcb364c0d.css */
+* {
+    -webkit-transition: .3s cubic-bezier(.25, .8, .25, 1);
+    transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    position: relative;
+}
+
+.linea-horizontal {
+    background: linear-gradient(96.4deg, #192e53 16.27%, #0ea1ef 28.57%, #66baf1 41.3%, #b4d0f3 50.63%, #ebd563 61.66%, #fcd636 69.3%, #fd9401 80.33%, #dd4b45 89.24%, #dd4b45 89.25%);
+}
+
+@media (max-width:500px) {
+    .linea-horizontal {
+        height: 5px !important;
+    }
+}
+
+.linea-horizontal {
+    height: 8px;
+    -webkit-animation: 10s linear infinite animateBg;
+    animation: 10s linear infinite animateBg;
+    background-color: #fff;
+    background-image: -webkit-gradient(linear, left top, right top, from(#dd4b45), color-stop(#192e53), color-stop(#0ea1ef), color-stop(#66baf1), color-stop(#b4d0f3), color-stop(#ebd563), color-stop(#fcd636), color-stop(#fd9401), color-stop(#dd4b45), color-stop(#192e53), color-stop(#0ea1ef), color-stop(#66baf1), color-stop(#b4d0f3), color-stop(#ebd563), color-stop(#fcd636), color-stop(#fd9401), to(#dd4b45));
+    background-image: linear-gradient(90deg, #dd4b45, #192e53, #0ea1ef, #66baf1, #b4d0f3, #ebd563, #fcd636, #fd9401, #dd4b45, #192e53, #0ea1ef, #66baf1, #b4d0f3, #ebd563, #fcd636, #fd9401, #dd4b45);
+    background-size: 300% 100%;
+}

@@ -1,0 +1,132 @@
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="card border-dark mb-3" style="max-width: 60rem;">
+        <div class="card-header text-center">Modificar cliente</div>
+        <div class="card-body">
+            <form ngNativeValidate [formGroup]="datosCliente" (ngSubmit)="editarCliente()">
+
+                <!-- Nombre Completo -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input required maxlength="50" class="form-control" type="text"
+                                placeholder="Nombre Completo" formControlName="nombreCompleto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Identificacion -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input required maxlength="50" class="form-control" type="text"
+                                    placeholder="Identificacion" formControlName="identificacion">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edad -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input required min="1" max="119" class="form-control" type="number" placeholder="Edad"
+                                    formControlName="edad">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Genero -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <select required class="form-control" formControlName="genero"
+                            placeholder="Genero">
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enfermdad -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="checkbox" (change)="disableControl()">
+                            <label for="enfermedad" style="padding-left: 10px;">Padece enfermedad</label>
+                            <textarea required class="form-control" placeholder="Enfermedades"
+                                formControlName="enfermedad"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maneja -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Maneja" disabled="true">
+                            <div class="input-group-prepend">
+                                <div class="form-control">
+                                    <input type="checkbox" formControlName="maneja">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usa Lentes -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Usa Lentes" disabled="true">
+                            <div class="input-group-prepend">
+                                <div class="form-control">
+                                    <input type="checkbox" formControlName="usaLentes">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diabetico -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Diabetico" disabled="true">
+                            <div class="input-group-prepend">
+                                <div class="form-control">
+                                    <input type="checkbox" formControlName="diabetico">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- datosAdicionales -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="input-group" *ngFor="let dato of datosAdicionales; let i = index">
+                            <input type="text" class="form-control" value="{{ dato.descripcion }}">
+                            <span class="material-icons delete-icon" (click)="deleteDatosAdicionales(i)">-</span>
+                        </div>
+                    </div>
+                    <span class="material-icons add-icon" style="padding-left: 300px;"
+                    (click)="addDatosAdicionales()">+</span>
+                </div>
+
+                <!-- Botones -->
+                <br>
+                <button class="btn btn-primary btn-block form-button">Guardar</button>
+                <button class="btn btn-danger btn-block form-button" routerLink="/dashboard">Cancelar</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
