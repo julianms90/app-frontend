@@ -18,9 +18,9 @@ export class RegisterComponent implements OnInit {
     private toastr: ToastrService, 
     private router: Router) {
     this.register = this.fb.group({
-      usuario: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(4)]],
-      confirmPassword: ['', Validators.required]
+      usuario: ['', [Validators.required, Validators.maxLength(20)]],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      confirmPassword: ['',[ Validators.required, Validators.minLength(4), Validators.maxLength(50)]]
     }, 
     {validator: this.checkPassword})
   }

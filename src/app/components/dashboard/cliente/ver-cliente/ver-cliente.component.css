@@ -59,14 +59,7 @@ label.radio input:checked+span {
     border-radius: 10px
 }
 
-.delete-icon{
-    font-size: 39px;
+.delete-add{
     cursor: pointer;
-    color: #ce4b4b;
 }
 
-.add-icon{
-    font-size: 39px;
-    cursor: pointer;
-    float: right;
-}

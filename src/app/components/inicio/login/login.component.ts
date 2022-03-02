@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private toastr: ToastrService) {
     this.login = this.fb.group({
-      usuario: ['', Validators.required],
-      password: ['', Validators.required]
+      usuario: ['', [Validators.required, Validators.maxLength(20)]],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]]
     });
   }
   ngOnInit(): void { }

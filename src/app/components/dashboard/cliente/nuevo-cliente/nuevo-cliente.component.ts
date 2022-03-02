@@ -14,22 +14,22 @@ import { DatosAdicionales } from '../../../../models/datosAdicionales';
 export class NuevoClienteComponent implements OnInit {
   datosCliente: FormGroup;
   loading = false;
-  valorInicial = true;
+  bandera = true;
 
   constructor(private fb: FormBuilder,
     private router: Router,
     private clienteService: ClienteService,
     private toastr: ToastrService) {
       this.datosCliente = this.fb.group({
-        nombreCompleto: ['', Validators.required],
-        identificacion: ['', Validators.required],
-        edad: ['', Validators.required],
-        genero: [undefined, Validators.required],
+        nombreCompleto: ['', [Validators.required, Validators.maxLength(50)]],
+        identificacion: ['', [Validators.required, Validators.maxLength(50)]],
+        edad: ['', [Validators.required, Validators.min(1), Validators.max(119)]],
+        genero: ['Indefinido', Validators.required],
         estado: true,
         maneja: false,
         usaLentes: false,
         diabetico: false,
-        enfermedad: [{ value: '', disabled: true }],
+        enfermedad: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(200)]],
         datosAdicionales: this.fb.array([])
       });
   
@@ -94,13 +94,14 @@ export class NuevoClienteComponent implements OnInit {
   }
 
   disableControl(): void {
-    if (this.valorInicial) {
+    if (this.bandera) {
       this.datosCliente.controls['enfermedad'].enable();
-      this.valorInicial = false;
+      this.bandera = false;
       return;
     }
     this.datosCliente.controls['enfermedad'].disable();
     this.datosCliente.get('enfermedad').setValue('');
-    this.valorInicial = true;
+    this.bandera = true;
   }
+  
 }

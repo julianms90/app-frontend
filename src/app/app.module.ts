@@ -27,6 +27,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import { NuevoClienteComponent } from './components/dashboard/cliente/nuevo-cliente/nuevo-cliente.component';
 import { VerClienteComponent } from './components/dashboard/cliente/ver-cliente/ver-cliente.component';
 import { ListaClientesComponent } from './components/dashboard/cliente/lista-clientes/lista-clientes.component';
+import { SharedModule } from './components/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ListaClientesComponent } from './components/dashboard/cliente/lista-cli
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    MatSliderModule
+    MatSliderModule,
+    SharedModule
   ],
   providers: [ {provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true}],
   bootstrap: [AppComponent]

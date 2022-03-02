@@ -17,9 +17,9 @@ export class CambiarPasswordComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router) {
     this.cambiarPassword = this.fb.group({
-      passwordAnterior: ['', Validators.required],
-      passwordNuevo: ['', Validators.required, Validators.minLength(4)],
-      confirmPassword: ['']
+      passwordAnterior: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      passwordNuevo: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]]
     }, { validator: this.checkPassword })
   }
 

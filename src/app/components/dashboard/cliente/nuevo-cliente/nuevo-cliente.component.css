@@ -70,3 +70,7 @@ label.radio input:checked+span {
     cursor: pointer;
     float: right;
 }
+.logo{
+    display: flex;
+    align-items:center;
+}

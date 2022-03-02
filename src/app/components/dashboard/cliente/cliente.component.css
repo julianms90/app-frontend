@@ -1,0 +1,14 @@
+.container {
+    min-height: 100vh;
+    display: initial;
+    justify-content: center;
+    align-items: center;
+}
+.titulo1{
+    font-style: oblique;
+    padding-left: 460px;
+}
+.titulo2{
+    font-style: oblique;
+    padding-left: 380px;
+}

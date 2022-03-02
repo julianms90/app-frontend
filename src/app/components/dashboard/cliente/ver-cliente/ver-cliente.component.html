@@ -8,9 +8,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <input required maxlength="50" class="form-control" type="text"
-                                placeholder="Nombre Completo" formControlName="nombreCompleto">
+                            <input class="form-control" type="text" placeholder="Nombre Completo"
+                                formControlName="nombreCompleto">
                         </div>
+                        <span class="text-danger ml-2"
+                            *ngIf="datosCliente.get('nombreCompleto').hasError('required') && datosCliente.get('nombreCompleto').touched">
+                            El campo es <strong>obligatorio</strong>
+                        </span>
+
                     </div>
                 </div>
 
@@ -19,9 +24,14 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             <div class="input-group">
-                                <input required maxlength="50" class="form-control" type="text"
-                                    placeholder="Identificacion" formControlName="identificacion">
+                                <input class="form-control" type="text" placeholder="Identificacion"
+                                    formControlName="identificacion">
                             </div>
+                            <span class="text-danger ml-2"
+                                *ngIf="datosCliente.get('identificacion').hasError('required') && datosCliente.get('identificacion').touched">
+                                El campo es <strong>obligatorio</strong>
+                            </span>
+
                         </div>
                     </div>
                 </div>
@@ -31,9 +41,13 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             <div class="input-group">
-                                <input required min="1" max="119" class="form-control" type="number" placeholder="Edad"
-                                    formControlName="edad">
+                                <input class="form-control" type="number" placeholder="Edad" formControlName="edad">
                             </div>
+                            <span class="text-danger ml-2"
+                                *ngIf="datosCliente.get('edad').hasError('required') && datosCliente.get('edad').touched">
+                                El campo es <strong>obligatorio</strong>
+                            </span>
+
                         </div>
                     </div>
                 </div>
@@ -42,8 +56,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <select required class="form-control" formControlName="genero"
-                            placeholder="Genero">
+                            <select class="form-control" formControlName="genero" placeholder="Genero">
                                 <option>Masculino</option>
                                 <option>Femenino</option>
                             </select>
@@ -55,11 +68,17 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <input type="checkbox" (change)="disableControl()">
+                            <input type="checkbox" (change)="disableControl()"
+                                [checked]="datosCliente.get('enfermedad').value">
                             <label for="enfermedad" style="padding-left: 10px;">Padece enfermedad</label>
-                            <textarea required class="form-control" placeholder="Enfermedades"
+                            <textarea class="form-control" placeholder="Enfermedades"
                                 formControlName="enfermedad"></textarea>
                         </div>
+                        <span class="text-danger ml-2"
+                            *ngIf="datosCliente.get('enfermedad').hasError('required') && datosCliente.get('enfermedad').touched">
+                            El campo es <strong>obligatorio</strong>
+                        </span>
+
                     </div>
                 </div>
 
@@ -111,18 +130,25 @@
                 <!-- datosAdicionales -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="input-group" *ngFor="let dato of datosAdicionales; let i = index">
+                        <div class="input-group" style="align-items: center;"
+                            *ngFor="let dato of datosAdicionales; let i = index">
                             <input type="text" class="form-control" value="{{ dato.descripcion }}">
-                            <span class="material-icons delete-icon" (click)="deleteDatosAdicionales(i)">-</span>
+                            <mat-icon class="delete-add" (click)="deleteDatosAdicionales(i)">highlight_off</mat-icon>
                         </div>
                     </div>
-                    <span class="material-icons add-icon" style="padding-left: 300px;"
-                    (click)="addDatosAdicionales()">+</span>
                 </div>
 
+
+                <div class="input-group" style="place-content: end;">
+                    <div class="input-group-prepend">
+                        <div class="form-control">
+                            <mat-icon class="delete-add" (click)="addDatosAdicionales()">add_circle_outline</mat-icon>
+                        </div>
+                    </div>
+                </div>
                 <!-- Botones -->
                 <br>
-                <button class="btn btn-primary btn-block form-button">Guardar</button>
+                <button class="btn btn-primary btn-block form-button" [disabled]="datosCliente.invalid">Guardar</button>
                 <button class="btn btn-danger btn-block form-button" routerLink="/dashboard">Cancelar</button>
             </form>
 

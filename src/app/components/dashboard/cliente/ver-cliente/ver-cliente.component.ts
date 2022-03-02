@@ -32,15 +32,15 @@ export class VerClienteComponent implements OnInit {
     this.getCliente();
     this.datosCliente = this.fb.group({
       id: [''],
-      nombreCompleto: [''],
-      identificacion: [''],
-      edad: [''],
+      nombreCompleto: ['', [Validators.required, Validators.maxLength(50)]],
+      identificacion: ['',[Validators.required, Validators.maxLength(50)]],
+      edad: ['', [Validators.required, Validators.min(1), Validators.max(119)]],
       genero: [''],
       estado: [''],
       maneja: [''],
       usaLentes: [''],
       diabetico: [''],
-      enfermedad: [''],
+      enfermedad: [{ value: ''}, [Validators.required, Validators.maxLength(200)]],
       datosAdicionales: this.fb.array([
         this.fb.control('')
       ])
