@@ -1,9 +1,17 @@
-<router-outlet></router-outlet>
 <div class="container">
   <div class="row" style="width: 100%;">
     <app-loading *ngIf="loading" style="padding-bottom: 10px;"></app-loading>
     <h4 class="titulo2" *ngIf="listaCliente.length == 0 && loading == false">No hay cuestionarios para mostrar</h4>
     <h4 class="titulo1" *ngIf="listaCliente.length > 0">Listado de Clientes</h4>
+    <input type="text" class="form-control mb-2" placeholder="Buscar cliente" #txtSearch
+      (keyup)="onSearchCliente( txtSearch.value )" />
+    <br>
+    <br>
+    <div class="form-group">
+      <button class="btn btn-primary mr-2" (click)="prevPage()">Anteriores</button>
+      <button class="btn btn-primary" (click)="nextPage()"
+      [disabled]="(listaCliente | busquedaPorNombre:page:search).length === 0">Siguientes</button>
+    </div>
 
     <table class="table table-striped">
       <thead class="thead-dark">
@@ -18,7 +26,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cliente of listaCliente">
+        <tr *ngFor="let cliente of listaCliente | busquedaPorNombre:page:search">
           <td>{{ cliente.nombreCompleto }}</td>
           <td>{{ cliente.identificacion }}</td>
           <td>{{ cliente.edad }}</td>
@@ -47,10 +55,8 @@
               </svg>
             </button>
           </td>
-
         </tr>
       </tbody>
     </table>
-
   </div>
 </div>

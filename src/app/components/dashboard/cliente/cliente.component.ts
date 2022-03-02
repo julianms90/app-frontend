@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ClienteService } from '../../../services/cliente.service';
 import { Cliente } from '../../../models/cliente';
 import { ToastrService } from 'ngx-toastr';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-cliente',
@@ -14,7 +13,8 @@ export class ClienteComponent implements OnInit {
   listaCliente: Cliente[] = [];
   loading = false;
   cliente: any;
-
+  public page: number = 0;
+  public search: string = '';
 
   constructor(private fb: FormBuilder,
     private clienteService: ClienteService,
@@ -50,5 +50,17 @@ export class ClienteComponent implements OnInit {
     }
   }
 
+  nextPage() {
+    this.page += 10;
+  }
 
+  prevPage() {
+    if ( this.page > 0 )
+      this.page -= 10;
+  }
+
+  onSearchCliente( search: string ) {
+    this.page = 0;
+    this.search = search;
+  }
 }

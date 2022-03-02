@@ -12,6 +12,9 @@ import { MatSliderModule } from '@angular/material/slider';
 //Interceptors
 import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor'
 
+// Pipe
+import { BusquedaPorNombrePipe } from './pipes/busqueda-por-nombre.pipe';
+
 // Componentes
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -44,6 +47,7 @@ import { SharedModule } from './components/shared/shared.module';
     NuevoClienteComponent,
     VerClienteComponent,
     ListaClientesComponent,
+    BusquedaPorNombrePipe,
   ],
   imports: [
     BrowserModule,

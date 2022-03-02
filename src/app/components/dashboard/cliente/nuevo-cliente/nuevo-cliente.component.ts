@@ -29,7 +29,7 @@ export class NuevoClienteComponent implements OnInit {
         maneja: false,
         usaLentes: false,
         diabetico: false,
-        enfermedad: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(200)]],
+        enfermedad: [{ value: 'Indefinido', disabled: true }, [Validators.required, Validators.maxLength(200)]],
         datosAdicionales: this.fb.array([])
       });
   

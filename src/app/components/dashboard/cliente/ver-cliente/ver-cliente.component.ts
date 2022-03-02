@@ -40,10 +40,8 @@ export class VerClienteComponent implements OnInit {
       maneja: [''],
       usaLentes: [''],
       diabetico: [''],
-      enfermedad: [{ value: ''}, [Validators.required, Validators.maxLength(200)]],
-      datosAdicionales: this.fb.array([
-        this.fb.control('')
-      ])
+      enfermedad: ['', [Validators.required, Validators.maxLength(200)]],
+      datosAdicionales: this.fb.array([])
     });
 
   }
@@ -111,15 +109,17 @@ export class VerClienteComponent implements OnInit {
     this.getDatosAdicionales().removeAt(index);
   }
 
-  disableControl(): void {
-    if (this.valorInicial) {
+  disableControl(bandera: boolean): void {
+    if (bandera) {
       this.datosCliente.controls['enfermedad'].enable();
-      this.valorInicial = false;
+      this.datosCliente.get('enfermedad').setValue('');
+      // this.valorInicial = false;
       return;
     }
+
     this.datosCliente.controls['enfermedad'].disable();
     this.datosCliente.get('enfermedad').setValue('');
-    this.valorInicial = true;
+    // this.valorInicial = true;
   }
   addDatosAdicionales(): void {
     this.datosAdicionales.push(this.fb.group({
